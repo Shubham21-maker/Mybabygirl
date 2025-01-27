@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <header>
+        <h1 class="main-heading">Our Memories ❤️</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reasons.html">Reasons</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <div class="photo" onclick="playSong('song.mp3')">
+            <img src="images/1.jpg" alt="Memory 1">
+        </div>
+        <div class="photo" onclick="playSong('song.mp3')">
+            <img src="images/2.jpg" alt="Memory 2">
+        </div>
+        <div class="photo" onclick="playSong('song.mp3')">
+            <img src="images/3.jpg" alt="Memory 3">
+        </div>
+    </section>
+
+    <audio id="background-song" src="song.mp3"></audio>
+
+    <footer>
+        <p>Made with endless love for you, my ❤️.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
