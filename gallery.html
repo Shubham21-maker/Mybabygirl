@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why I Love You</title>
+    <title>Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="background-animation"></div>
     <header>
-        <h1 class="main-heading">Why I Love You ❤️</h1>
+        <h1 class="main-heading">Our Memories ❤️</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -19,13 +19,19 @@
         </nav>
     </header>
 
-    <section class="countdown-section">
-        <h2>Days Until Your Birthday 🎉: <span id="countdown"></span></h2>
+    <section class="gallery">
+        <div class="photo" onclick="playSong('song.mp3')">
+            <img src="images/1.jpg" alt="Memory 1">
+        </div>
+        <div class="photo" onclick="playSong('song.mp3')">
+            <img src="images/2.jpg" alt="Memory 2">
+        </div>
+        <div class="photo" onclick="playSong('song.mp3')">
+            <img src="images/3.jpg" alt="Memory 3">
+        </div>
     </section>
 
-    <section class="intro">
-        <p>Welcome to this special website, created just for you! It’s all about us, our bond, and why I adore you. Explore the reasons, view memories, and feel how much you mean to me. 🥰</p>
-    </section>
+    <audio id="background-song" src="song.mp3"></audio>
 
     <footer>
         <p>Made with endless love for you, my ❤️.</p>

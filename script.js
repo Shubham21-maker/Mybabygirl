@@ -1,46 +1,38 @@
-// Countdown Timer Calculation
-const countdownDate = new Date("Feb 21, 2025 00:00:00").getTime(); // Target date (Prachi's birthday)
+// Countdown Timer
+const countdownDate = new Date("Feb 21, 2025 00:00:00").getTime();
 const countdownElement = document.getElementById("countdown");
 
 function updateCountdown() {
     const now = new Date().getTime();
-    const timeRemaining = countdownDate - now;
+    const timeLeft = countdownDate - now;
 
-    // Time calculations
-    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    countdownElement.textContent = `${days} days`;
 
-    // Display countdown in "DAYS:HH:MM:SS" format
-    countdownElement.textContent = `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
-
-    // If the countdown reaches zero, display birthday message
-    if (timeRemaining < 0) {
-        countdownElement.textContent = "It's Your Birthday! 🎉";
+    if (timeLeft < 0) {
+        countdownElement.textContent = "Happy Birthday! 🎉";
     }
 }
 
-// Update Countdown every 1 second
 setInterval(updateCountdown, 1000);
 
-// Image Modal Functionality
-var modal = document.getElementById("myModal");
-var images = document.getElementsByClassName("image");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-
-for (var i = 0; i < images.length; i++) {
-    images[i].onclick = function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
+// Play Song on Click
+function playSong(songPath) {
+    const song = document.getElementById("background-song");
+    song.src = songPath;
+    song.play();
 }
 
-// Close the Modal
-var span = document.getElementsByClassName("close")[0];
+// Flying Hearts Trail Effect
+document.addEventListener("mousemove", (e) => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.top = `${e.clientY}px`;
+    heart.style.left = `${e.clientX}px`;
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 1000);
+});
